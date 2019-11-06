@@ -6,7 +6,7 @@ public class Practice {
 		Character b = new Magician(50, 100 ,"魔法使い");
 		a.introduce();
 		b.introduce();
-		b.attack(a);
 		a.attack(b);
+		b.attack(a);
 	}
 }
