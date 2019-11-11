@@ -19,11 +19,15 @@ public class Character {
 
 	public void attack(Character target) {
 		System.out.println(name+"の攻撃！");
-		target.damage(10);
+		target.damage(30);
 	}
 
 	public void damage(int atk) {
 		this.hp-=atk;
 		System.out.println(name+"は攻撃された! HP:"+hp);
+	}
+
+	public boolean isDead() {
+		return hp<=0;
 	}
 }

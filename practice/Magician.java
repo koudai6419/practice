@@ -2,11 +2,11 @@ package practice;
 
 public class Magician extends Character {
 	public Magician(int hp, int mp, String name) {
-		super(hp, mp,name);
+		super(hp, mp, name);
 	}
-
+	@Override
 	public void introduce() {
-		System.out.println(name);
+		System.out.println("hp: "+hp+" mp:"+mp+" name: "+ name);
 	}
 
 	public void attack(Character target) {
