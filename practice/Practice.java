@@ -1,16 +1,25 @@
-package practice;
+/*
+・それぞれの職業クラスとCharacterと継承関係にない適当なクラスでMovableインターフェースを継承しよう。
+・moveメソッドをオーバーライドしてattackさせたり好きな行動をさせよう。
+・Movableを継承していればCharacterと継承関係になくてもmoveがきちんと呼べるのを確認しよう。
+以上の項目がわからなかった。*/
+
+package practice8;
 
 public class Practice {
 	public static void main (String[] args) {
 		System.out.println("RPG開始");
-		Character[][] characters= new Character[2][3];
-		characters[0][0] = new Character(100, 50 ,"勇者");
-		characters[0][1] = new Magician(50, 100 ,"魔法使い");
-		characters[1][0] = new Ossan(70, 30 ,"おっさん");
-		characters[1][1] = new Obasan(60, 30 ,"おばさん");
+		Character[][] Movable= new Character[2][3];
+		Movable[0][0] = new Character(100, 50 ,"勇者");
+		Movable[0][1] = new Magician(50, 100 ,"魔法使い");
+		Movable[1][0] = new Ossan(70, 30 ,"おっさん");
+		Movable[1][1] = new Obasan(60, 30 ,"おばさん");
+//		Movable[1][2] = new Onepiece(60, 30 ,"ルフィ");
+
 
 		System.out.println("練習");
-		((Magician)characters[0][1]).move();
+		((Magician)Movable[0][1]).move();
+		Onepiece.move();
 
 		java.util.Random r = new java.util.Random();
 		boolean isFinished = false;
@@ -18,14 +27,14 @@ public class Practice {
 		while(!isFinished) {
 			Character player, enemy;
 			do {
-				player = characters[turn%2][r.nextInt(2)];
-				enemy = characters[(turn%2-1)*-1][r.nextInt(2)];
+				player = Movable[turn%2][r.nextInt(2)];
+				enemy = Movable[(turn%2-1)*-1][r.nextInt(2)];
 			}while(player.isDead() || enemy.isDead());
 			player.attack(enemy);
 
 			boolean temp=true;
 			for(int i=0;i<2;i++) {
-				if(!characters[0][i].isDead()) temp=false;
+				if(!Movable[0][i].isDead()) temp=false;
 			}
 			if(temp) {
 				System.out.println("敵の勝ち");
@@ -33,7 +42,7 @@ public class Practice {
 			}
 			temp=true;
 			for(int i=0;i<2;i++) {
-				if(!characters[1][i].isDead()) temp=false;
+				if(!Movable[1][i].isDead()) temp=false;
 			}
 			if(temp) {
 				System.out.println("味方の勝ち");
@@ -42,15 +51,5 @@ public class Practice {
 			System.out.println("=========="+turn+"ターン==========");
 			turn++;
 		}
-		/*Character a = new Character(100, 50 ,"勇者");
-		Character b = new Magician(50, 100 ,"魔法使い");
-		Character c = new Ossan(70, 30 ,"おっさん");
-		Character d = new Obasan(60, 30 ,"おばさん");
-		a.introduce();
-		b.introduce();
-		c.introduce();
-		d.introduce();
-		a.attack(b);
-		b.attack(a);*/
 	}
 }

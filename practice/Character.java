@@ -1,4 +1,4 @@
-package practice;
+package practice8;
 
 public class Character {
 	public int hp;

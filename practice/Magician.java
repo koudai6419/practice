@@ -1,6 +1,8 @@
-package practice;
+package practice8;
 
-public class Magician extends Character {
+import practice8.Character.Movable;
+
+public class Magician extends Character implements Movable{
 	public Magician(int hp, int mp, String name) {
 		super(hp, mp, name);
 	}
@@ -9,8 +11,8 @@ public class Magician extends Character {
 		System.out.println("hp: "+hp+" mp:"+mp+" name: "+ name);
 	}
 
-	public void attack(Character target) {
-		magic(target);
+	public void attack(Movable target) {
+		move(target);
 	}
 
 	public void magic(Character target) {
@@ -19,7 +21,7 @@ public class Magician extends Character {
 		mp/=2;
 	}
 
-	public void move() {
+	public void move(Movable target) {
 		System.out.println("チャージショット！！");
 		damage(30);
 	}

@@ -1,4 +1,4 @@
-package practice;
+package practice8;
 
 public class Obasan extends Character {
 	public Obasan(int hp, int mp, String name) {
