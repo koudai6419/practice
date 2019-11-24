@@ -30,4 +30,8 @@ public class Character {
 	public boolean isDead() {
 		return hp<=0;
 	}
+
+	interface Movable {
+		void move();
+	}
 }

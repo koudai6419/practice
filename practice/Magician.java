@@ -18,4 +18,9 @@ public class Magician extends Character {
 		target.damage(mp/2);
 		mp/=2;
 	}
+
+	public void move() {
+		System.out.println("チャージショット！！");
+		damage(30);
+	}
 }

@@ -9,6 +9,9 @@ public class Practice {
 		characters[1][0] = new Ossan(70, 30 ,"おっさん");
 		characters[1][1] = new Obasan(60, 30 ,"おばさん");
 
+		System.out.println("練習");
+		((Magician)characters[0][1]).move();
+
 		java.util.Random r = new java.util.Random();
 		boolean isFinished = false;
 		int turn =0;
