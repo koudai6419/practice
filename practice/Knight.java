@@ -1,14 +1,13 @@
 package practice8;
 
-public class Obasan extends Character implements Movable{
-	public Obasan(int hp, int mp, String name) {
+public class Knight extends Character implements Movable{
+	public Knight(int hp, int mp, String name){
 		super(hp, mp, name);
 	}
 
-	@Override
 	public void introduce() {
 		if(isDead())return;
-		System.out.println("hp: "+hp+" mp:"+mp+" name: "+ name);
+		System.out.println(" 名前: "+ name+"HP: "+hp+" MP:"+mp);
 	}
 
 	public void attack(Character target) {
